@@ -1,6 +1,6 @@
 # Game Loop
 
-The app uses `std::chrono::steady_clock` and a fixed-step accumulator.
+Uses `std::chrono::steady_clock` and a fixed-step accumulator.
 
 Each outer frame:
 

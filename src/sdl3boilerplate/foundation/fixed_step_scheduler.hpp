@@ -8,13 +8,13 @@
 namespace sdl3boilerplate::foundation {
 
 class FixedStepScheduler {
-  public:
+public:
     [[nodiscard]] static SecondsF ClampFrameDelta(SecondsF frame_delta);
 
     [[nodiscard]] std::size_t Advance(SecondsF frame_delta);
     [[nodiscard]] SecondsF accumulator() const;
 
-  private:
+private:
     SecondsF accumulator_{SecondsF::zero()};
 };
 

@@ -1,4 +1,4 @@
-# Development And Validation
+# Development and Validation
 
 The canonical Windows workflow is preset-first through vcpkg manifest mode. Use the PowerShell helpers in `tools/windows/` for day-to-day work; they validate the preset/vcpkg contract, run from the repo root, keep generated output under `out/`, and restore the caller's working directory and previous `VCPKG_ROOT` when they exit.
 
@@ -15,7 +15,7 @@ If PowerShell blocks scripts in a local shell:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
-## Presets And Output
+## Presets and Output
 
 The main configure preset is `windows-vcpkg`. It writes to `out/build-win-vcpkg`, uses x64 architecture, `VCPKG_TARGET_TRIPLET=x64-windows`, `VCPKG_MANIFEST_MODE=ON`, and the preset-level toolchain file `$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake`.
 
@@ -92,8 +92,4 @@ cmake --build --preset windows-debug-analyze --target sdl3boilerplate
 
 ## Source Rules
 
-Headers use `.hpp` and traditional include guards. In `.hpp` files, includes are grouped as standard library, third-party, then project headers. In `.cpp` files, include the matching project header first when one exists, then group the remaining includes as standard library, third-party, then project headers.
-
 Production and test sources are listed explicitly in `CMakeLists.txt`; do not add source globbing. `src/sdl3boilerplate/sim/` stays SDL-free. Runtime dependency is SDL3 only, and GoogleTest is for tests.
-
-This foundation intentionally has no release gate and no release, packaging, install, dist, asset, audio, texture, or font tooling.

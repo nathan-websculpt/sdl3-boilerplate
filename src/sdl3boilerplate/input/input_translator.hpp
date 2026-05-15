@@ -9,12 +9,12 @@
 namespace sdl3boilerplate::input {
 
 class InputTranslator {
-  public:
+public:
     void HandleEvent(const SDL_Event& event);
 
     [[nodiscard]] const InputState& state() const;
 
-  private:
+private:
     void SetKey(SDL_Scancode scancode, bool pressed);
     void RefreshMovementState();
 

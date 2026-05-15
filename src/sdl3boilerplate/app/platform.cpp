@@ -21,7 +21,7 @@ std::string MakeSdlErrorMessage(const char* operation) {
 }
 
 class SdlRuntime {
-  public:
+public:
     SdlRuntime() {
         if (!SDL_Init(SDL_INIT_VIDEO)) {
             const std::string error_message = MakeSdlErrorMessage("SDL_Init");
@@ -39,7 +39,7 @@ class SdlRuntime {
 };
 
 class Window {
-  public:
+public:
     Window()
         : window_(SDL_CreateWindow(foundation::kApplicationTitle, foundation::kWindowWidth,
                                    foundation::kWindowHeight, 0)) {
@@ -61,12 +61,12 @@ class Window {
         return window_;
     }
 
-  private:
+private:
     SDL_Window* window_;
 };
 
 class RendererHandle {
-  public:
+public:
     explicit RendererHandle(SDL_Window* window) : renderer_(SDL_CreateRenderer(window, nullptr)) {
         if (renderer_ == nullptr) {
             throw std::runtime_error(MakeSdlErrorMessage("SDL_CreateRenderer"));
@@ -93,7 +93,7 @@ class RendererHandle {
         return renderer_;
     }
 
-  private:
+private:
     SDL_Renderer* renderer_;
 };
 

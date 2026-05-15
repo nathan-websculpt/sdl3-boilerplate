@@ -1,6 +1,6 @@
 # Architecture
 
-This project is a reusable SDL3 game foundation. The first app renders a single moving square, but the code is split around boundaries that can survive larger games.
+This is a reusable SDL3 game foundation. This version renders a single moving square, but the code is split around boundaries that can survive larger games.
 
 ## Layers
 

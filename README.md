@@ -1,8 +1,8 @@
 # SDL3 Boilerplate
 
-Reusable SDL3 C++20 game foundation code for Windows-first development. The first visible app is intentionally small: it opens a 960x720 window, clears to a dark background, draws a centered white square, moves with WASD or arrow keys, and exits with Escape or the window close button.
+Reusable SDL3 C++20 game foundation code for Windows-first development. This is intentionally small: it opens a 960x720 window, clears to a dark background, draws a centered white square, and moves with WASD or arrow keys.
 
-The small app sits on production-oriented structure: SDL resources are RAII-owned, simulation is SDL-free, rendering observes simulation state, and timing uses a fixed-step `std::chrono::steady_clock` loop.
+The boilerplate sits on production-oriented structure: SDL resources are RAII-owned, simulation is SDL-free, rendering observes simulation state, and timing uses a fixed-step `std::chrono::steady_clock` loop.
 
 ## Requirements
 
@@ -64,7 +64,7 @@ Run MSVC analysis:
 .\tools\windows\analyze.ps1
 ```
 
-Format project-owned C/C++ files:
+Format files:
 
 ```powershell
 .\tools\windows\format.ps1
@@ -76,7 +76,7 @@ The normal Windows build tree is `out/build-win-vcpkg`; the analyze lane uses `o
 
 This foundation intentionally has no release gate, packaging, install, dist, asset, audio, texture, or font tooling.
 
-## Starting A New Game From This Boilerplate
+## Starting a New Game from this Boilerplate
 
 Use [Using This As A Boilerplate](doc/using_as_boilerplate.md) after cloning to rename the project, replace the moving-square demo, and preserve the SDL boundary, fixed-step simulation, explicit state ownership, and render-observes-simulation design.
 
@@ -114,4 +114,3 @@ cmake --build --preset windows-debug-analyze --target sdl3boilerplate
 - `render`: SDL renderer drawing code that observes simulation state.
 - `tests`: GoogleTest coverage for foundation, input translation, simulation, and rendering boundaries.
 - `tools/windows`: Windows build, test, analyze, and format entry points.
-- `doc`: architecture, development, game loop, and boilerplate customization notes.

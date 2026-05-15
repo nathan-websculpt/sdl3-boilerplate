@@ -7,14 +7,14 @@
 namespace sdl3boilerplate::sim {
 
 class Player {
-  public:
+public:
     explicit Player(foundation::Vec2 initial_position);
 
     void Update(const GameInput& input, float delta_seconds);
 
     [[nodiscard]] foundation::Vec2 position() const;
 
-  private:
+private:
     foundation::Vec2 position_;
 };
 

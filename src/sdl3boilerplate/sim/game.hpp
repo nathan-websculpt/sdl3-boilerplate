@@ -9,7 +9,7 @@
 namespace sdl3boilerplate::sim {
 
 class Game {
-  public:
+public:
     Game();
 
     Game(const Game&) = delete;
@@ -21,7 +21,7 @@ class Game {
 
     [[nodiscard]] const GameState& state() const;
 
-  private:
+private:
     void SyncState();
 
     Player player_;

@@ -9,7 +9,7 @@
 namespace sdl3boilerplate::render {
 
 class Renderer {
-  public:
+public:
     explicit Renderer(SDL_Renderer* renderer);
 
     Renderer(const Renderer&) = delete;
@@ -19,7 +19,7 @@ class Renderer {
 
     [[nodiscard]] bool Render(const sim::GameState& state) const;
 
-  private:
+private:
     [[nodiscard]] bool SetDrawColor(foundation::Color color) const;
 
     SDL_Renderer* renderer_;
